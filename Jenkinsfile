@@ -21,7 +21,7 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-    }
+    
     // Post Build
     post {
         always {
