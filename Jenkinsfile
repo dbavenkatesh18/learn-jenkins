@@ -4,6 +4,9 @@ pipeline {
             label 'AGENT-1'
         }
     }
+    environment {
+        Greetings = "Hi I am environmental variable"
+    }
     // Build
     stages {
         stage('Build') {
@@ -18,10 +21,13 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh """
                 echo 'Deploying....'
+                echo '$Greetings'
+                """
             }
         }
-    
+    }
     // Post Build
     post {
         always {
