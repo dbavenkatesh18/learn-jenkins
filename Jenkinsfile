@@ -5,12 +5,13 @@ pipeline {
         }
     }
     environment {
-        Greetings = "Hi I am environmental variable latest"
+        Greetings = "Hi I am environmental variable"
     }
     options {
         // Timeout counter starts AFTER agent is allocated
         timeout(time: 100, unit: 'SECONDS')
-   
+    }
+    
     // Build
     stages {
         stage('Build') {
@@ -20,7 +21,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing phase..'
+                echo 'Testing..'
             }
         }
         stage('Deploy') {
