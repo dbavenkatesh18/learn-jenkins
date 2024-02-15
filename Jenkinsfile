@@ -25,7 +25,7 @@ pipeline {
     // Post Build
     post {
     always {
-      echo ‘I will always execute this!’
+      echo 'I will always execute this after build success'
     }
   }
 }
