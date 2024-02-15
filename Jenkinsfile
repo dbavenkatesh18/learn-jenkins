@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh """
-                echo 'Deploying....'
+                echo 'Deploying the code....'
                 echo '$Greetings'
                 """
             }
