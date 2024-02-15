@@ -7,6 +7,10 @@ pipeline {
     environment {
         Greetings = "Hi I am environmental variable"
     }
+    options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 1, unit: 'SECONDS')
+    }
     // Build
     stages {
         stage('Build') {
@@ -24,6 +28,7 @@ pipeline {
                 sh """
                 echo 'Deploying....'
                 echo '$Greetings'
+                sleep 10
                 """
             }
         }
