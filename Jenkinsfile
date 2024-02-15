@@ -27,5 +27,8 @@ pipeline {
         always {
             echo 'I will always execute this after build success'
         }
+        failure {
+            echo 'Build successfully failed'
+        }
     }
 }
